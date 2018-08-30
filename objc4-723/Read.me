@@ -1,0 +1,19 @@
+object/Sources/NSObject.mm
+//分配内存
++ (id)alloc {
+return _objc_rootAlloc(self);
+}
+
+// Replaced by ObjectAlloc
++ (id)allocWithZone:(struct _NSZone *)zone {
+return _objc_rootAllocWithZone(self, (malloc_zone_t *)zone);
+}
+
+// Replaced by CF (throws an NSException)
++ (id)init {
+return (id)self;
+}
+
+- (id)init {
+return _objc_rootInit(self);
+}
